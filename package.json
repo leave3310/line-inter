@@ -4,21 +4,19 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node ./public/app.js",
-    "dev": "nodemon ./public/app.js"
+    "start": "node ./src/app.js",
+    "dev": "nodemon ./src/app.js"
   },
   "dependencies": {
     "@line/bot-sdk": "^7.4.0",
     "axios": "^0.24.0",
     "debug": "~2.6.9",
     "dotenv-flow": "^3.2.0",
-    "eslint": "^8.3.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "nodemon": "^2.0.15",
-    "prettier": "^2.5.0"
+    "prettier": "^2.5.0",
+    "prettier-eslint": "^13.0.0"
   }
 }
