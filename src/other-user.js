@@ -209,6 +209,8 @@ function fillData(data) {
     }
 }
 
-
-
-
+export default async function getUser(token, client) {
+    const res = await axios.get('https://randomuser.me/api/')
+    const flex = fillData(res.data.results)
+    return client.replyMessage(token, flex)
+}

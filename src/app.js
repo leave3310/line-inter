@@ -3,7 +3,6 @@ import line from "@line/bot-sdk"
 import dotenv from "dotenv-flow"
 import replyMessage from "./reply.js"
 import getUser from './other-user.js'
-import e from "express"
 dotenv.config()
 
 const config = {
