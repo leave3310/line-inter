@@ -16,7 +16,19 @@ const app = express()
 app.post("/callback", line.middleware(config), (req, res) => {
   const userMessage = req.body.events[0]
   const replyToken = req.body.events[0].replyToken
-  
+  if (userMessage.type === 'message') {
+    if (userMessage.message.text === 'help' || userMessage.message.text === 'Help') {
+      client.replyMessage(replyToken, replyMessage)
+    } else {
+      return client.replyMessage(replyToken, { type: 'text', text: userMessage.message.text });
+    }
+  } else {
+    switch (userMessage.postback.data) {
+      case 'user':
+        getUser(replyToken, client)
+        break
+    }
+  }
 });
 
 // listen on port
