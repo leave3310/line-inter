@@ -16,6 +16,16 @@ const replyMessage = {
             "label": "get another user",
             "data": "user"
           }
+        },
+        {
+          "type": "button",
+          "style": "link",
+          "height": "sm",
+          "action": {
+            "type": "postback",
+            "label": "get attractions",
+            "data": "attractions"
+          }
         }
       ]
     }
