@@ -3,7 +3,8 @@ import line from "@line/bot-sdk"
 import dotenv from "dotenv-flow"
 import replyMessage from "./reply.js"
 import getUser from './other-user.js'
-import { attractionsFlex } from './attractions.js'
+import attractionsFlex from './attraction/attraction-postback.js'
+import getAttractions from './attraction/attractions.js'
 dotenv.config()
 
 const config = {
@@ -30,6 +31,8 @@ app.post("/callback", line.middleware(config), (req, res) => {
         break
       case 'attractions':
         return client.replyMessage(replyToken, attractionsFlex)
+      default:
+        getAttractions(replyToken, client, userMessage.postback.data)
     }
   }
 });
