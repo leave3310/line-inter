@@ -1,6 +1,6 @@
-const attractionsFlex = {
+const attractionsPostback = {
     "type": "flex",
-    "altText": "choose your choice",
+    "altText": "choose your place",
     "contents": {
         "type": "bubble",
         "body": {
@@ -197,22 +197,23 @@ const attractionsFlex = {
                             "contents": [
                                 {
                                     "type": "icon",
-                                    "url": "https://github.com/motea927/mtWeather/blob/master/img/location-icon/Keelung.png?raw=true"
+                                    "url": "https://thumb.silhouette-ac.com/t/6d/6d86ec3d58d6c955fef44f45772dd3fa_t.jpeg"
                                 },
                                 {
                                     "type": "text",
+                                    "text": "連江縣",
                                     "wrap": true,
                                     "color": "#666666",
                                     "size": "sm",
-                                    "flex": 0,
+                                    "flex": 1,
                                     "action": {
                                         "type": "postback",
-                                        "data": "Keelung",
+                                        "data": "LienchiangCounty",
                                         "label": "attractions"
-                                    },
-                                    "text": "基隆市"
+                                    }
                                 }
-                            ]
+                            ],
+                            "flex": 1
                         },
                         {
                             "type": "box",
@@ -627,31 +628,6 @@ const attractionsFlex = {
                                 }
                             ]
                         },
-                        {
-                            "type": "box",
-                            "layout": "baseline",
-                            "spacing": "sm",
-                            "contents": [
-                                {
-                                    "type": "icon",
-                                    "url": "https://thumb.silhouette-ac.com/t/6d/6d86ec3d58d6c955fef44f45772dd3fa_t.jpeg"
-                                },
-                                {
-                                    "type": "text",
-                                    "text": "連江縣",
-                                    "wrap": true,
-                                    "color": "#666666",
-                                    "size": "sm",
-                                    "flex": 1,
-                                    "action": {
-                                        "type": "postback",
-                                        "data": "LienchiangCounty",
-                                        "label": "attractions"
-                                    }
-                                }
-                            ],
-                            "flex": 1
-                        }
                     ],
                     "flex": 2,
                     "cornerRadius": "none"
@@ -661,4 +637,4 @@ const attractionsFlex = {
     }
 
 }
-export default attractionsFlex
+export default attractionsPostback

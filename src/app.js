@@ -3,7 +3,7 @@ import line from "@line/bot-sdk"
 import dotenv from "dotenv-flow"
 import replyMessage from "./reply.js"
 import getUser from './other-user.js'
-import attractionsFlex from './attraction/attraction-postback.js'
+import attractionPostback from './attraction/attraction-postback.js'
 import getAttractions from './attraction/attractions.js'
 dotenv.config()
 
@@ -30,7 +30,7 @@ app.post("/callback", line.middleware(config), (req, res) => {
         getUser(replyToken, client)
         break
       case 'attractions':
-        return client.replyMessage(replyToken, attractionsFlex)
+        return client.replyMessage(replyToken, attractionPostback)
       default:
         getAttractions(replyToken, client, userMessage.postback.data)
     }
@@ -38,7 +38,7 @@ app.post("/callback", line.middleware(config), (req, res) => {
 });
 
 // listen on port
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000
 app.listen(port, () => {
-  console.log(`listening on ${port}`);
+  console.log(`listening on ${port}`)
 });
